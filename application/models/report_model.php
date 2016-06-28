@@ -49,7 +49,7 @@ class Report_model extends CI_Model {
     }
 
     public function getRequisitionDonations($did) {
-	$this->db->select('do.id as donation_id, do.date as donation_date, do.requisition_status, do.student_quantity, do.transfer_student_quantity, do.possible_book, do.transfer_possible_book, do.transfer_money_amount, do.money_amount, u.name as mpo_name, co.name as college_name, jo.name as jonal_name, te.name as teacher_name, di.name as division_name, dis.name as district_name, t.name as thana_name, de.name as department_name, cl.name as class_name, bo.book_name');
+	$this->db->select('do.id as donation_id, do.date as donation_date, do.requisition_status, do.student_quantity, do.transfer_student_quantity, do.possible_book, do.transfer_possible_book, do.duration, do.transfer_money_amount, do.money_amount, u.name as mpo_name, co.name as college_name, jo.name as jonal_name, te.name as teacher_name, di.name as division_name, dis.name as district_name, t.name as thana_name, de.name as department_name, cl.name as class_name, bo.book_name');
 	$this->db->where('do.id', $did);
 	$this->db->where('do.status', 1);
 	$this->db->from('tbl_donation as do');
@@ -207,7 +207,7 @@ class Report_model extends CI_Model {
 
     public function donation_requisition($start_date = NULL, $end_date = NULL, $division_id = NULL, $jonal_id = NULL, $district_id = NULL, $thana_id = NULL, $college_id = NULL) {
 
-	$sql = "SELECT do.id, do.requisition_status, do.date,u.name as user_name,c.name as college_name, te.name as teacher_name, d.name as department_name,cl.name as class_name,do.student_quantity,do.possible_book,bo.book_name as book_name,do.money_amount "
+	$sql = "SELECT do.id, do.requisition_status, do.date,u.name as user_name,c.name as college_name, te.name as teacher_name, d.name as department_name,cl.name as class_name,do.student_quantity,do.possible_book, do.duration,bo.book_name as book_name,do.money_amount "
 		. "FROM "
 		. "tbl_donation as do INNER JOIN department as d ON do.department_id=d.id "
 		. "INNER JOIN user as u ON do.requisition_by = u.id "

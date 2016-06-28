@@ -74,13 +74,17 @@ $this->load->view('common/sidebar');
 
     <div class="col-md-12 main-mid-area"><br><br>
 
-	<div class="col-md-3">
+	<div class="col-md-2">
 	    <label>ছাত্র ছাত্রীর সংখ্যা</label>
 	    <input type="number" class="form-control col-md-1" value="<?php echo $student_quantity; ?>" id="student_quantity" name="student_quantity" required />
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-2">
 	    <label>সম্ভাব্য বই চলবে </label>
 	    <input type="number" class="form-control col-md-1" id="possible_book" value="<?php echo $possible_book; ?>" name="possible_book" required />
+	</div>
+	<div class="col-md-2">
+	    <label>Donation Duration </label>
+	    <input type="text" class="form-control col-md-1" id="duration" value="<?php echo $duration; ?>" name="duration" required />
 	</div>
 	<div class="col-md-3">
 	    <label> 
