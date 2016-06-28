@@ -24,7 +24,6 @@ $this->load->view('common/sidebar');
     <div class="col-md-12 main-mid-area">
 	<?php $this->load->view('common/error_show') ?>
         <h2> Donation Requisition  </h2><br>
-
 	<?php echo form_open(); ?>
 	<div id="type_container">
 	    <div class="row type-row" id="edit-0">
@@ -116,6 +115,7 @@ $this->load->view('common/sidebar');
 	<?php echo form_close(); ?>
 
     </div>
+
 
 
     <script>
