@@ -9,12 +9,12 @@ $this->load->view('common/sidebar');
     <!-- Content Header (Page header) -->
     <section class="content-header" style="margin-top:-10px!important;">
         <h1>
-            Book Stock Reports 
+           Donation Stock Reports 
 
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="<?php echo base_url() ?>report/book_stock"><i class="fa "></i> Stock Book</a></li>
+            <li><a href="<?php echo base_url() ?>report/donation_stock"><i class="fa "></i> Stock Donation</a></li>
         </ol>
     </section>
     <br/>
@@ -42,7 +42,7 @@ $this->load->view('common/sidebar');
 
         <div class="col-md-12">
 
-            <a href="<?php echo base_url(); ?>distribute/distribute_book" class="btn btn-primary pull-right">বই বিতরণ</a>
+            <a href="<?php echo base_url(); ?>distribute/distribute_donation" class="btn btn-primary pull-right">অনুদান বিতরণ</a>
             <table class="table table-bordered table-hover ">
 
                 <tr>

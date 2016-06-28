@@ -189,16 +189,7 @@ class Requisition extends MY_Controller {
 
     public function view($id) {
 	$data['requisition_info'] = $this->CM->getwhere('tbl_requisition', array('id' => $id));
-	// echo "<pre>";
-	// print_r($data['requisition_info']);
-	// exit();
-
 	$data['book_list'] = $this->RM->getRequisitionBooks($id);
-
-
-	if (empty($id) || empty($data['purchase_info'])) {
-	    //  redirect('report/report_item');
-	}
 
 	$this->load->view('requisition/printpreview', $data);
     }

@@ -12,11 +12,10 @@ $this->load->view('common/sidebar');
     <section class="content-header" style="margin-top:-10px!important;">
         <h1>
             Dashboard
-            <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="active"><a href="<?php echo base_url() ?>expense/add_expense">Expense</a></li>
+            <li class="active"><a href="<?php echo base_url() ?>expense/add_expense">Add Expense</a></li>
         </ol>
     </section>
     <br/>
@@ -135,7 +134,7 @@ $this->load->view('common/sidebar');
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Expense Type</label>
+                    <label>ব্যয়ের ধরন</label>
                     <select class="form-control" id="expense_type" name="expense_type" >
                         <option value="1">মোটর সাইকেল ছাড়া </option>
                         <option value="2">কোম্পানির মোটর সাইকেল </option>

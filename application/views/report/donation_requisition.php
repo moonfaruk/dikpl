@@ -16,7 +16,7 @@ $this->load->view('common/sidebar');
 	<ol class="breadcrumb">
 	    <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
 	    <li><a href="<?php echo base_url() ?>report"><i class="fa "></i> Report</a></li>
-	    <li class="active"><a href="#">Donation Requisition Request  </a></li>
+	    <li class="active"><a href="<?php echo base_url() ?>report/donation_requisition">Donation Requisition Request  </a></li>
 	</ol>
     </section>
     <br/>
@@ -142,7 +142,7 @@ $this->load->view('common/sidebar');
     		    <th  style="text-align: center">শ্রেনীর নাম</th>
     		    <th  style="text-align: center">ছাত্র ছাত্রীর সংখ্যা</th>
     		    <th  style="text-align: center">সম্ভাব্য বই চলবে</th>
-    		    <th  style="text-align: center">Donation Duration</th>
+    		    <th  style="text-align: center">অনুদানের সময়কাল</th>
     		    <th  style="text-align: center">বইয়ের নাম</th>
     		    <th  style="text-align: center">টাকার পরিমান</th>
     		    <th  style="text-align: center">Requistion Status</th>

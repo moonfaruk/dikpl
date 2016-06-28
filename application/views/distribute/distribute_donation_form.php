@@ -17,7 +17,7 @@ $this->load->view('common/sidebar');
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() ?>home"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active"><a href="<?php echo base_url() ?>distribute/distribute_book">Distribute Book </a></li>
+            <li class="active"><a href="<?php echo base_url() ?>distribute/distribute_donation">Distribute Donation </a></li>
 
         </ol>
     </section>
@@ -44,18 +44,18 @@ $this->load->view('common/sidebar');
                             <th> </th>
                         </tr>
                         <?php
-                        foreach ($book_list as $book) {
+                        //foreach ($book_list as $book) {
                             // echo "<pre>";
                             // print_r($book);
                             ?>
                             <tr>
-                                <td class="book_name"> <?php echo $book['book_name'] ?> </td>
-                                <td class="book_quantity"> <?php echo $book['quantity'] ?> </td>
+                                <td class="book_name"> <?php// echo $book['book_name'] ?> </td>
+                                <td class="book_quantity"> <?php //echo $book['quantity'] ?> </td>
                                 
-                                <td> <a href="JavaScript:void(0)" id="" class="btn btn-xs btn-success pull-right add_book_row" item-id="<?php echo $book['book_id'] ?>" >Add Book </a> </td>
+                                <td> <a href="JavaScript:void(0)" id="" class="btn btn-xs btn-success pull-right add_book_row" item-id="<?php //echo $book['book_id'] ?>" >Add Donation </a> </td>
                             </tr>
 
-                        <?php } ?>
+                        <?php //} ?>
                     </table> 
                 </div>  
 
@@ -99,10 +99,10 @@ $this->load->view('common/sidebar');
                         <?php
                         $class = 'class="form-control " id="college_id" ';
                         $collages[''] = 'Select a College';
-                        foreach ($college_list as $collage) {
-                            $collages[$collage['college_id']] = $collage['college_name'];
-                        }
-                        echo form_dropdown('college_id', $collages, $college_id, $class);
+                        //foreach ($college_list as $collage) {
+                            //$collages[$collage['college_id']] = $collage['college_name'];
+                       // }
+                        //echo form_dropdown('college_id', $collages, $college_id, $class);
                         ?>
                     </div>
                 </div>
@@ -118,12 +118,12 @@ $this->load->view('common/sidebar');
 
                             $teachers_list[''] = 'Select a Teacher';
 
-                            foreach ($teacher_list as $teacher) {
-                                $teachers_list[$teacher['id']] = $teacher['name'];
+                           // foreach ($teacher_list as $teacher) {
+                                //$teachers_list[$teacher['id']] = $teacher['name'];
                                 
-                            }
+                            //}
 
-                            echo form_dropdown('teacher_id', $teachers_list, '', $class);
+                            //echo form_dropdown('teacher_id', $teachers_list, '', $class);
 
                             ?>
                         

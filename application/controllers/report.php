@@ -491,6 +491,14 @@ class Report extends MY_Controller {
     	$this->load->view('report/stock_book_report', $data);
     }
     
+     public function donation_stock($mpo_id=NULL){
+    	if($mpo_id!=NULL && ($this->user_type==1 || $this->user_type==2 || $this->user_type==3)){
+    		$this->uid=$mpo_id;
+    	}
+    	$data['book_list'] = $this->RM->book_stock_list_of_mpo($this->uid);
+    	$this->load->view('report/stock_donation_report', $data);
+    }
+    
     /**
     * Daily Expense Report 
     */

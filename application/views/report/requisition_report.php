@@ -9,13 +9,14 @@ $this->load->view('common/sidebar');
     <!-- Content Header (Page header) -->
     <section class="content-header" style="margin-top:-10px!important;">
         <h1>
-            Distribution Reports 
-
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
-            <!--<li><a href="<?php echo base_url() ?>donation"><i class="fa "></i> Report</a></li>-->
-        </ol>
+	    Reports : 
+	    <small> Donation Distribute Report </small>
+	</h1>
+	<ol class="breadcrumb">
+	    <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
+	    <li><a href="<?php echo base_url() ?>report"><i class="fa "></i> Report</a></li>
+	    <li class="active"><a href="<?php echo base_url() ?>report/show_report"> Donation Distribute Report  </a></li>
+	</ol>
     </section>
     <br/>
 

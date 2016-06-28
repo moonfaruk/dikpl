@@ -287,6 +287,12 @@ class Distribute extends MY_Controller {
 
         $this->load->view('distribute/view', $data);
     }
+    
+     public function distribute_donation($college_id = NULL) {
+	 
+	$this->load->view('distribute/distribute_donation_form');
+     }
+        
 
 }
 

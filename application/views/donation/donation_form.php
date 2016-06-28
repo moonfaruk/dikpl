@@ -9,103 +9,112 @@ $this->load->view('common/sidebar');
 <aside class="right-side">
     <!-- Content Header (Page header) -->
     <section class="content-header" style="margin-top:-10px!important;">
-        <h1>
-            Donations 
-
+	<h1 id="company_info">
+            Dashboard
+            <small ><?php if (!empty($companyname)) echo $companyname; ?></small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
-	    <li class="active"><a href="<?php echo base_url() ?>donation">Donation</a></li>
+	    <li class="active"><a href="<?php echo base_url() ?>requisition">Requisition</a></li>
             <li class="active"><a href="<?php echo base_url() ?>donation/add">Add Donation</a></li>
         </ol>
     </section>
     <br/>
 
     <div class="col-md-12 main-mid-area">
+	<?php $this->load->view('common/error_show') ?>
+        <h2> Donation Requisition  </h2><br>
+
 	<?php echo form_open(); ?>
+	<div id="type_container">
+	    <div class="row type-row" id="edit-0">
+		<div class="col-md-12 main-mid-area">
+		    <div class="col-md-3">
+			<label> 
+			    প্রতিষ্ঠানের নাম 
+			    <select class="form-control col-md-1" id="college_id" name="college_id" required>
+				<option value="all"> সিলেক্ট প্রতিষ্ঠান   </option>
+				<?php foreach ($college_list as $value) { ?>
+    				<option <?php if ($college_id == $value['id']) echo "selected" ?> value="<?php echo $value['id']; ?>"> <?php echo $value['name']; ?></option>
+				<?php } ?>
+			    </select>
+			</label>
+		    </div>
+		    <div class="col-md-3">
+			<label> 
+			    শিক্ষকের নাম 
+			    <select class="form-control col-md-1" id="teacher_id" name="teacher_id" required>
+				<option value="all"> সিলেক্ট শিক্ষক   </option>
+				<?php if ($teacher_id != "") { ?>
+    				<option selected="" value="<?php echo $teacher_id->id; ?>"><?php echo $teacher_id->name; ?></option>
+				<?php } ?>
+			    </select>
+			</label>
+		    </div>
+		    <div class="col-md-3">
+			<label> 
+			    বিষয়ের নাম 
+			    <select class="form-control col-md-1" id="department_id" name="department_id" required>
+				<option value="all"> সিলেক্ট বিষয়   </option>
+				<?php if ($department_id != "") { ?>
+    				<option selected="" value="<?php echo $department_id->id; ?>"><?php echo $department_id->name; ?></option>
+				<?php } ?>
+			    </select>
+			</label>
+		    </div>
+		    <div class="col-md-3">
+			<label> 
+			    শ্রেনীর নাম 
+			    <select class="form-control col-md-1" id="class_id" name="class_id" required>
+				<option value="all"> সিলেক্ট শ্রেণী  </option>
+				<?php foreach ($class_list as $value) { ?>
+    				<option <?php if ($class_id == $value['id']) echo 'selected' ?> value="<?php echo $value['id']; ?>"> <?php echo $value['name']; ?></option>
+				<?php } ?>
+			    </select>
+			</label>
+		    </div>
+		</div>
 
-	<div class="col-md-3">
-	    <label> 
-		প্রতিষ্ঠানের নাম 
 
-		<select class="form-control col-md-1" id="college_id" name="college_id" required>
-		    <option value="all"> সিলেক্ট প্রতিষ্ঠান   </option>
-		    <?php foreach ($college_list as $value) { ?>
-    		    <option <?php if ($college_id == $value['id']) echo "selected" ?> value="<?php echo $value['id']; ?>"> <?php echo $value['name']; ?></option>
-		    <?php } ?>
-		</select>
-	    </label>
-	</div>
-	<div class="col-md-3">
-	    <label> 
-		শিক্ষকের নাম 
-		<select class="form-control col-md-1" id="teacher_id" name="teacher_id" required>
-		    <option value="all"> সিলেক্ট শিক্ষক   </option>
-		    <?php if ($teacher_id != "") { ?>
-    		    <option selected="" value="<?php echo $teacher_id->id; ?>"><?php echo $teacher_id->name; ?></option>
-		    <?php } ?>
-		</select>
-	    </label>
-	</div>
-	<div class="col-md-3">
-	    <label> 
-		বিষয়ের নাম 
-		<select class="form-control col-md-1" id="department_id" name="department_id" required>
-		    <option value="all"> সিলেক্ট বিষয়   </option>
-		    <?php if ($department_id != "") { ?>
-    		    <option selected="" value="<?php echo $department_id->id; ?>"><?php echo $department_id->name; ?></option>
-		    <?php } ?>
-		</select>
-	    </label>
-	</div>
-	<div class="col-md-3">
-	    <label> 
-		শ্রেনীর নাম 
-		<select class="form-control col-md-1" id="class_id" name="class_id" required>
-		    <option value="all"> সিলেক্ট শ্রেণী  </option>
-		    <?php foreach ($class_list as $value) { ?>
-    		    <option <?php if ($class_id == $value['id']) echo 'selected' ?> value="<?php echo $value['id']; ?>"> <?php echo $value['name']; ?></option>
-		    <?php } ?>
-		</select>
-	    </label>
-	</div>
 
-    </div>
+		<div class="col-md-12 main-mid-area"><br><br>
 
-    <div class="col-md-12 main-mid-area"><br><br>
-
-	<div class="col-md-2">
-	    <label>ছাত্র ছাত্রীর সংখ্যা</label>
-	    <input type="number" class="form-control col-md-1" value="<?php echo $student_quantity; ?>" id="student_quantity" name="student_quantity" required />
-	</div>
-	<div class="col-md-2">
-	    <label>সম্ভাব্য বই চলবে </label>
-	    <input type="number" class="form-control col-md-1" id="possible_book" value="<?php echo $possible_book; ?>" name="possible_book" required />
-	</div>
-	<div class="col-md-2">
-	    <label>Donation Duration </label>
-	    <input type="text" class="form-control col-md-1" id="duration" value="<?php echo $duration; ?>" name="duration" required />
-	</div>
-	<div class="col-md-3">
-	    <label> 
-		বইয়ের নাম 
-		<select class="form-control col-md-1" id="book_id" name="book_id" required>
-		    <option value="all"> সিলেক্ট বই  </option>
-		    <?php if ($book_id != "") { ?>
-    		    <option selected="" value="<?php echo $book_id->id; ?>"><?php echo $book_id->book_name; ?></option>
-		    <?php } ?>
-		</select>
-	    </label>
-	</div>
-	<div class="col-md-3">
-	    <label>টাকার পরিমান </label>
-	    <input type="number" class="form-control col-md-1" id="money_amount" name="money_amount" value="<?php echo $money_amount; ?>" required />
-	</div>
-	<div class="col-md-12">
-	    <br>
-	    <input type="submit" name="btn" class="btn btn-success pull-right" value="<?php echo $val; ?>" />
+		    <div class="col-md-2">
+			<label>ছাত্র ছাত্রীর সংখ্যা</label>
+			<input type="number" class="form-control col-md-1" value="<?php echo $student_quantity; ?>" id="student_quantity" name="student_quantity" required />
+		    </div>
+		    <div class="col-md-2">
+			<label>সম্ভাব্য বই চলবে </label>
+			<input type="number" class="form-control col-md-1" id="possible_book" value="<?php echo $possible_book; ?>" name="possible_book" required />
+		    </div>
+		    <div class="col-md-2">
+			<label>অনুদানের সময়কাল</label>
+			<input type="text" class="form-control col-md-1" id="duration" value="<?php echo $duration; ?>" name="duration" required />
+		    </div>
+		    <div class="col-md-3">
+			<label> 
+			    বইয়ের নাম 
+			    <select class="form-control col-md-1" id="book_id" name="book_id" required>
+				<option value="all"> সিলেক্ট বই  </option>
+				<?php if ($book_id != "") { ?>
+    				<option selected="" value="<?php echo $book_id->id; ?>"><?php echo $book_id->book_name; ?></option>
+				<?php } ?>
+			    </select>
+			</label>
+		    </div>
+		    <div class="col-md-3">
+			<label>টাকার পরিমান </label>
+			<input type="number" class="form-control col-md-1" id="money_amount" name="money_amount" value="<?php echo $money_amount; ?>" required />
+		    </div>
+		    <div class="col-md-12">
+			<br>
+			<input type="submit" name="btn" class="btn btn-success pull-right" value="<?php echo $val; ?>" />
+		    </div>
+		</div>
+	    </div>
 	</div>
 	<?php echo form_close(); ?>
+
     </div>
 
 

@@ -17,8 +17,8 @@ $this->load->view('common/sidebar');
             </h1>
             <ol class="breadcrumb">
                 <li><a href="<?php echo base_url()?>home"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active"><a href="<?php echo base_url()?>purchase">Purchase</a></li>
-                <li class="active"><a href="<?php echo base_url()?>purchase/add">Add Purchase</a></li>
+		<li><a href="<?php echo base_url() ?>report"><i class="fa "></i> Report</a></li>
+                <li class="active"><a href="<?php echo base_url()?>requisition/view/<?php echo $requisition_info->id;?>">Book Requisition View</a></li>
             </ol>
         </section>
     <br/>
@@ -51,7 +51,7 @@ $this->load->view('common/sidebar');
     
     <div class="col-md-12 margin_padding voucher_memo_area">
        
-        <h3>Requisition Voucher</h3>  
+        <h3>Book Requisition Voucher</h3>  
         <table width="100%"> 
             <tr>
                 

@@ -68,7 +68,7 @@ $user_type = $this->session->userdata('user_type');
     </li>
     
     <li class="<?php if ($c == 'donation') echo "active" ?>">
-        <a href="<?php echo base_url(); ?>donation/add">
+        <a href="<?php echo base_url(); ?>distribute/distribute_donation">
             <i class="fa fa-paypal"></i> <span>Donation Distribution </span>
         </a>
     </li>

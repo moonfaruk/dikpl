@@ -10,14 +10,14 @@ $this->load->view('common/sidebar');
     <!-- Content Header (Page header) -->
     <section class="content-header" style="margin-top:-10px!important;">
         <h1>
-            Reports : 
-            <small> Chalan/Shipment Report (Dsivision) </small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="<?php echo base_url() ?>report"><i class="fa "></i> Report</a></li>
-            <li class="active"><a href="#">Chalan Report  </a></li>
-        </ol>
+	    Reports : 
+	    <small> Book Requisition Request  </small>
+	</h1>
+	<ol class="breadcrumb">
+	    <li><a href="<?php echo base_url() ?>home"><i class="fa fa-home"></i> Home</a></li>
+	    <li><a href="<?php echo base_url() ?>report"><i class="fa "></i> Report</a></li>
+	    <li class="active"><a href="<?php echo base_url() ?>report/requisition">Book Requisition Request  </a></li>
+	</ol>
     </section>
     <br/>
 

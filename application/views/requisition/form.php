@@ -25,7 +25,7 @@ $this->load->view('common/sidebar');
     <!-- Start Working area --> 
     <div class="col-md-12 main-mid-area"> 
         <?php $this->load->view('common/error_show') ?>
-        <h2> Book Requisition  </h2>
+        <h2> Book Requisition  </h2><br>
 
         <!-- ************************************************* -->
         <?php echo form_open(); ?>
