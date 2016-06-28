@@ -28,10 +28,11 @@ class Donation extends MY_Controller {
 	$data['class_id'] = "";
 	$data['student_quantity'] = "";
 	$data['possible_book'] = "";
+	$data['duration'] = "";
 	$data['book_id'] = "";
 	$data['money_amount'] = "";
 	$this->load->library('form_validation');
-	$this->form_validation->set_rules('college_id', 'class_id', 'money_amount', 'required');
+	$this->form_validation->set_rules('college_id', 'class_id', 'money_amount', 'duration', 'required');
 	if ($this->form_validation->run() == FALSE) {
 	    $this->load->view('donation/donation_form', $data);
 	} else {
@@ -42,6 +43,7 @@ class Donation extends MY_Controller {
 	    $datas['class_id'] = $this->input->post('class_id');
 	    $datas['student_quantity'] = $this->input->post('student_quantity');
 	    $datas['possible_book'] = $this->input->post('possible_book');
+	    $datas['duration'] = $this->input->post('duration');
 	    $datas['book_id'] = $this->input->post('book_id');
 	    $datas['money_amount'] = $this->input->post('money_amount');
 
@@ -97,6 +99,7 @@ class Donation extends MY_Controller {
 	$data['class_id'] = $donation_info->class_id;
 	$data['student_quantity'] = $donation_info->student_quantity;
 	$data['possible_book'] = $donation_info->possible_book;
+	$data['duration'] = $donation_info->duration;
 	$data['book_id'] = $this->CM->getInfo('books', $donation_info->book_id);
 	$data['money_amount'] = $donation_info->money_amount;
 	$this->load->library('form_validation');
@@ -111,6 +114,7 @@ class Donation extends MY_Controller {
 	    $datas['class_id'] = $this->input->post('class_id');
 	    $datas['student_quantity'] = $this->input->post('student_quantity');
 	    $datas['possible_book'] = $this->input->post('possible_book');
+	    $datas['duration'] = $this->input->post('duration');
 	    $datas['book_id'] = $this->input->post('book_id');
 	    $datas['money_amount'] = $this->input->post('money_amount');
 

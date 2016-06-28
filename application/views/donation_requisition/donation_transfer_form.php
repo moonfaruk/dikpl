@@ -186,9 +186,17 @@ $companyname = $this->session->userdata('companyname');
 			    ?>
     		    </td>
     		</tr>
+		<tr class="voucher_item">
+    		    <th align="center">Donation Duration</th>
+    		    <td><?php echo $donation_info['duration']; ?></td>
+		    <td></td>
+    		    <td></td>
+    		</tr>
     		<tr class="voucher_item">
     		    <th align="center">Book Name</th>
     		    <td><?php echo $donation_info['book_name']; ?></td>
+		    <td></td>
+    		    <td></td>
     		</tr>
 
     		<tr class="voucher_item">
