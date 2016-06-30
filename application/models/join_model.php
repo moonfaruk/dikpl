@@ -175,5 +175,18 @@ class Join_model extends CI_Model {
 	$result = $this->db->query($sql);
 	return $result->result_array();
     }
+    
+    public function get_distribute_donation_info($id){
+	$this->db->select('do.id, do.money_amount, co.name as college_name, bo.book_name');
+	$this->db->where('do.requisition_by', $id);
+	$this->db->where('do.status', 1);
+	$this->db->from('tbl_donation as do');
+	
+	$this->db->join('college as co', 'co.id=do.college_id', 'left');
+	$this->db->join('books as bo', 'bo.id=do.book_id', 'left');
+	
+	$result = $this->db->get()->result_array();
+	return $result;
+    }
 
 }

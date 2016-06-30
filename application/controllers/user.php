@@ -158,7 +158,7 @@ class User extends MY_Controller {
 
         $this->load->library('form_validation');
         // $this->form_validation->set_rules('email', 'password', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email|callback_email_check[' . $id . ']');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|callback_email_check[' . $id . ']');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('user/eform', $data);

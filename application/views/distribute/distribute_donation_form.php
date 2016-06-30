@@ -38,24 +38,32 @@ $this->load->view('common/sidebar');
                 <div class="slect_book">
                     <table id="distribute_book" class="table table-striped"> 
                         <tr class="alert alert-warning">
-                            <th>Book  Name</th>
-                            <th>Current Stock </th> 
+                            <th style="text-align:center;">College Name</th>
+                            <th style="text-align:center;">Book Name</th> 
+                            <th style="text-align:center;">Money Amount</th> 
                             <th> </th>
                             <th> </th>
                         </tr>
                         <?php
-                        //foreach ($book_list as $book) {
+                        foreach ($distribute_info as $donation) {
                             // echo "<pre>";
                             // print_r($book);
                             ?>
-                            <tr>
-                                <td class="book_name"> <?php// echo $book['book_name'] ?> </td>
-                                <td class="book_quantity"> <?php //echo $book['quantity'] ?> </td>
+                            <tr align="center">
+                                <td class="college_name"> <?php echo $donation['college_name'] ?> </td>
+                                <!--<td class="book_quantity"> <?php //echo $book['quantity'] ?> </td>-->
+                                
+				<td class="book_name"> <?php echo $donation['book_name'] ?> </td>
+				 <td class="money_amount"> <?php echo $donation['money_amount'] ?> </td>
+                                <!--<td class="book_quantity"> <?php //echo $book['quantity'] ?> </td>-->
                                 
                                 <td> <a href="JavaScript:void(0)" id="" class="btn btn-xs btn-success pull-right add_book_row" item-id="<?php //echo $book['book_id'] ?>" >Add Donation </a> </td>
                             </tr>
+			    
+			    
 
-                        <?php //} ?>
+
+                        <?php } ?>
                     </table> 
                 </div>  
 
@@ -68,10 +76,9 @@ $this->load->view('common/sidebar');
                         <tr class="alert alert-info">
 
                             <th></th>
-                            <th>Book  Name</th>
-                            <th>Book Code </th>
-                            <th>Book Price</th>
-                            <th>Current Stock </th>
+                            <th>College Name</th>
+                            <th>Book Name</th>
+                            <th>Money Amount</th>
                             <th>Transfer QTY</th>
 
                         </tr>
